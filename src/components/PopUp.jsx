@@ -6,7 +6,7 @@ import { ArrowRight, Clock, Rocket, X } from 'lucide-react';
 import DataService from '../services/DataService';
 
 const Popup = ({ isCross = true, onClose, courseId }) => {
-    // const navigate = useNavigate();
+    const navigate = useNavigate();
     const [searchParams] = useSearchParams();
     const [countryData, setCountryData] = useState([]);
     const [utmData, setUtmData] = useState({});
@@ -82,7 +82,7 @@ const Popup = ({ isCross = true, onClose, courseId }) => {
                 localStorage.setItem('userData', JSON.stringify(userData));
 
                 // Navigate to thank-you page
-                // navigate(`/offer/thanks/${courseName}`);
+                navigate(`/offer/thanks/${courseName}`);
             }
         });
         // console.log('Form submitted:', userData);
