@@ -4,13 +4,13 @@ import CourseCard from '../components/CourseCard'
 import Header from '../components/Header'
 import { doNetSuccessStories, donNetCourses, dotNetMemberships } from '../helpers/constant'
 import TransformationFramework from '../components/TransformationFramework'
-import ProjectsShowcase from '../components/ProjectSShowcase'
 import TrainersSection from '../components/TrainersSection'
 import WhySection from '../components/WhySection'
 import TrustSection from '../components/TrustSection'
 import MegaOffer from '../components/MegaOffer'
 import CloudSandboxDemo from '../components/CloudSandboxDemo'
 import HeroSection from '../components/HeroSection'
+import ProjectsShowcase from '../components/ProjectsShowcase'
 
 const DotNet = () => {
     return (
