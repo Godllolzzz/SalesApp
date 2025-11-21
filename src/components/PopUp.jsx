@@ -14,15 +14,15 @@ const Popup = ({ isCross = true, onClose, courseId }) => {
 
     console.log(courseId);
 
-    // useEffect(() => {
-    //     // Disable scrolling when popup opens
-    //     document.body.style.overflow = 'hidden';
+    useEffect(() => {
+        // Disable scrolling when popup opens
+        document.body.style.overflow = 'hidden';
 
-    //     // Re-enable scrolling when popup closes
-    //     return () => {
-    //         document.body.style.overflow = 'unset';
-    //     };
-    // }, []);
+        // Re-enable scrolling when popup closes
+        return () => {
+            document.body.style.overflow = 'unset';
+        };
+    }, []);
 
     const initialValues = {
         name: '',
@@ -97,7 +97,6 @@ const Popup = ({ isCross = true, onClose, courseId }) => {
         });
         // console.log('Form submitted:', userData);
     };
-    return null;
 
     return (
         <div
