@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { Sun, Moon } from 'lucide-react';
 import logo from "../assests/images/logo.png"
 
-const Header = () => {
+const Header = ({ showButton = true }) => {
     const [isDark, setIsDark] = useState(false);
 
     useEffect(() => {
@@ -49,19 +49,23 @@ const Header = () => {
                             ScholarHat
                         </h1>
                     </a>
-
                     {/* Navigation Menu - Hidden on mobile, shown on larger screens */}
-                    <nav className="hidden md:flex items-center space-x-8">
+
+                    {showButton && <nav className="hidden md:flex items-center space-x-8">
                         <a href="#trainings" className="text-gray-700 dark:text-gray-300 hover:text-cyan-600 dark:hover:text-cyan-400 font-medium transition-colors duration-200">
                             Trainings
                         </a>
                         <a href="#memberships" className="text-gray-700 dark:text-gray-300 hover:text-cyan-600 dark:hover:text-cyan-400 font-medium transition-colors duration-200">
                             Memberships
                         </a>
+                        <a href="#tutors" className="text-gray-700 dark:text-gray-300 hover:text-cyan-600 dark:hover:text-cyan-400 font-medium transition-colors duration-200">
+                            Tutors
+                        </a>
                         <a href="#reviews" className="text-gray-700 dark:text-gray-300 hover:text-cyan-600 dark:hover:text-cyan-400 font-medium transition-colors duration-200">
                             Reviews
                         </a>
-                    </nav>
+                    </nav>}
+
 
                     {/* Right Side - Theme Toggle */}
                     {/* <div className="flex items-center space-x-4">

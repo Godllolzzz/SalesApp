@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
-import { PartyPopper, Flame, CheckCircle, Rocket, Video, Clock, Circle, Timer } from 'lucide-react'
+import { Flame, CheckCircle, Timer } from 'lucide-react'
+import img from '../assests/images/image.png'
 
 function HeroSection() {
     const [timeLeft, setTimeLeft] = useState({
@@ -30,103 +31,97 @@ function HeroSection() {
     }, [])
 
     return (
-        <section className="relative pt-20 overflow-hidden">
-            <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
+        <section className="pt-20 relative bg-gradient-to-br from-sky-50 via-white to-blue-50 dark:from-slate-950 dark:via-blue-950 dark:to-slate-900 px-2 md:px-4 overflow-hidden transition-colors duration-300">
+            <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
 
-            <div className="max-w-6xl mx-auto relative z-10">
-                <div className="text-center">
-                    <div className="flex justify-center mb-6">
-                        {/* <PartyPopper className="w-16 h-16 text-yellow-400" /> */}
-                    </div>
-                    <h1 className="text-3xl md:text-5xl font-black mb-6 text-white leading-tight">
-                        The Biggest Tech Career
-                        <span className="block text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400">
+            <div className="max-w-7xl mx-auto relative z-10">
+                {/* Top Heading - One Line */}
+                <div className="text-center lg:text-left my-4">
+                    <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-gray-900 dark:text-white">
+                        The Biggest Tech Career{' '}
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-500 dark:from-cyan-400 dark:via-blue-400 dark:to-purple-400">
                             Upgrade Offer of 2025
                         </span>
                     </h1>
+                </div>
 
-                    <div className="text-2xl md:text-3xl font-bold text-yellow-400 mb-4">
-                        Ends 31 Dec!
-                    </div>
-
-                    <div className="flex items-center justify-center gap-3 text-xl md:text-2xl text-white font-bold mb-8">
-                        <Flame className="w-8 h-8 text-orange-500" />
-                        <span>Flat ₹7,500 OFF + FREE Bonuses Worth ₹25,000</span>
-                    </div>
-
-                    <div className="text-lg text-cyan-400 font-semibold mb-10">
-                        Valid for ALL 4–6 Month Job-Oriented Programs
-                    </div>
-
-                    <div className="flex flex-wrap justify-center gap-3 mb-12 text-sm text-white">
-                        <span className="flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-lg border border-white/20">
-                            <CheckCircle className="w-4 h-4 text-green-400" />
-                            Full Stack .NET Core + Azure AZ-204 + AI
-                        </span>
-                        <span className="flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-lg border border-white/20">
-                            <CheckCircle className="w-4 h-4 text-green-400" />
-                            .NET Solution Architect
-                        </span>
-                        <span className="flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-lg border border-white/20">
-                            <CheckCircle className="w-4 h-4 text-green-400" />
-                            Advanced Java Full Stack
-                        </span>
-                        <span className="flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-lg border border-white/20">
-                            <CheckCircle className="w-4 h-4 text-green-400" />
-                            Azure AI Engineer
-                        </span>
-                        <span className="flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-lg border border-white/20">
-                            <CheckCircle className="w-4 h-4 text-green-400" />
-                            GenAI Engineer
-                        </span>
-                        <span className="flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-lg border border-white/20">
-                            <CheckCircle className="w-4 h-4 text-green-400" />
-                            Agentic AI Engineer
-                        </span>
-                    </div>
-
-                    {/* <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-                        <button className="flex items-center justify-center gap-3 px-10 py-5 bg-gradient-to-r from-orange-500 to-red-600 text-white rounded-xl font-bold text-lg hover:shadow-2xl hover:shadow-orange-500/50 hover:scale-105 transition-all duration-300 shadow-lg">
-                            <Rocket className="w-6 h-6" />
-                            Grab Year-End Offer Now →
-                        </button>
-                        <button className="flex items-center justify-center gap-3 px-10 py-5 bg-white/10 backdrop-blur-sm border-2 border-white/30 text-white rounded-xl font-bold text-lg hover:bg-white/20 transition-all duration-300">
-                            <Video className="w-6 h-6" />
-                            Watch 60-sec Cloud Sandbox Demo
-                        </button>
-                    </div> */}
-
-                    <div className="bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl p-5 mb-8 shadow-xl">
-                        <div className="flex items-center justify-center gap-2.5 text-cyan-300 text-lg font-bold mb-4">
-                            <Timer className="w-5 h-5 animate-pulse" />
-                            Offer Ends In
+                {/* Main Content Box - Split into Two */}
+                <div className=" grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                    {/* Left Side - Content */}
+                    <div className="space-y-6 mb-5">
+                        <div className="text-2xl md:text-3xl font-bold text-yellow-600 dark:text-yellow-400 text-center lg:text-left">
+                            Ends 31 Dec!
                         </div>
 
-                        <div className="grid grid-cols-4 gap-3 max-w-sm mx-auto">
+                        <div className="flex items-center justify-center lg:justify-start gap-3 text-lg md:text-xl text-gray-900 dark:text-white font-bold">
+                            <Flame className="w-7 h-7 text-orange-500 flex-shrink-0" />
+                            <span>Flat ₹7,500 OFF + FREE Bonuses Worth ₹25,000</span>
+                        </div>
+
+                        <div className="text-base text-cyan-600 dark:text-cyan-400 font-semibold text-center lg:text-left">
+                            Valid for ALL 4–6 Month Job-Oriented Programs
+                        </div>
+
+                        <div className="flex flex-wrap justify-center lg:justify-start gap-2 dark:text-white text-md">
                             {[
-                                { value: timeLeft.days, label: "Days" },
-                                { value: timeLeft.hours, label: "Hours" },
-                                { value: timeLeft.minutes, label: "Mins" },
-                                { value: timeLeft.seconds, label: "Secs" },
-                            ].map((item, index) => (
-                                <div
-                                    key={index}
-                                    className="bg-white/15 backdrop-blur-md rounded-xl py-4 text-center border border-white/10"
-                                >
-                                    <div className="text-3xl font-black text-white tracking-wider">
-                                        {String(item.value).padStart(2, "0")}
-                                    </div>
-                                    <div className="text-xs font-medium text-cyan-200 uppercase tracking-wider mt-1">
-                                        {item.label}
-                                    </div>
-                                </div>
+                                'Full Stack .NET Core + Azure AZ-204 + AI',
+                                '.NET Solution Architect',
+                                'Advanced Java Full Stack',
+                                'Azure AI Engineer',
+                                'GenAI Engineer',
+                                'Agentic AI Engineer'
+                            ].map((program, idx) => (
+                                <span key={idx} className="flex items-center gap-1.5 px-3 py-1.5 bg-white dark:bg-white/10 backdrop-blur-sm rounded-lg border border-gray-200 dark:border-white/20 shadow-sm">
+                                    <CheckCircle className="w-3.5 h-3.5 text-green-500 dark:text-green-400 flex-shrink-0" />
+                                    {program}
+                                </span>
                             ))}
                         </div>
+
+                        {/* Countdown Timer */}
+                        <div className="bg-gradient-to-br from-orange-50 via-orange-50 to-yellow-50 dark:from-orange-950/30 dark:via-orange-950/20 dark:to-yellow-950/10 backdrop-blur-xl border border-orange-200 dark:border-orange-500/30 rounded-2xl p-5 shadow-lg shadow-orange-200/50 dark:shadow-orange-900/30">
+                            <div className="flex items-center justify-center gap-2.5 text-orange-600 dark:text-orange-400 text-base font-bold mb-4">
+                                <Timer className="w-5 h-5 animate-pulse text-orange-500" />
+                                Offer Ends In
+                            </div>
+
+                            <div className="grid grid-cols-4 gap-2 mx-auto">
+                                {[
+                                    { value: timeLeft.days, label: "Days" },
+                                    { value: timeLeft.hours, label: "Hours" },
+                                    { value: timeLeft.minutes, label: "Mins" },
+                                    { value: timeLeft.seconds, label: "Secs" },
+                                ].map((item, index) => (
+                                    <div
+                                        key={index}
+                                        className="flex-1 bg-orange-500 dark:bg-orange-600 backdrop-blur-md rounded-xl py-3 text-center border border-orange-200 dark:border-orange-500/20 shadow-sm"
+                                    >
+                                        <div className="text-4xl font-black text-white tracking-wider">
+                                            {String(item.value).padStart(2, "0")}
+                                        </div>
+                                        <div className="text-xs font-medium text-orange-200 dark:text-orange-300 uppercase tracking-wider mt-1">
+                                            {item.label}
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
                     </div>
-                    {/* <div className="flex items-center justify-center gap-2 text-green-400 font-bold text-sm animate-pulse">
-                        <Circle className="w-4 h-4 fill-green-400" />
-                        Only 25 Seats Get Architect 1:1 Bonus
-                    </div> */}
+
+                    {/* Right Side - Image */}
+                    <div className="relative flex items-center justify-center">
+                        <div className="relative z-10">
+                            <img
+                                src={img}
+                                alt="Expert Instructor Teaching Live"
+                                className="rounded-2xl w-full max-w-md h-auto object-cover drop-shadow-[0_20px_40px_rgba(6,182,212,0.3)]"
+                            />
+                        </div>
+
+                        {/* Decorative Orbs */}
+                        <div className="absolute top-0 -right-10 w-40 h-40 bg-gradient-to-br from-cyan-400 to-blue-600 rounded-full blur-3xl opacity-20 animate-pulse"></div>
+                        <div className="absolute bottom-0 -left-10 w-40 h-40 bg-gradient-to-tr from-sky-400 to-cyan-500 rounded-full blur-3xl opacity-20 animate-pulse"></div>
+                    </div>
                 </div>
             </div>
         </section>

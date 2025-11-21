@@ -14,6 +14,16 @@ const Popup = ({ isCross = true, onClose, courseId }) => {
 
     console.log(courseId);
 
+    // useEffect(() => {
+    //     // Disable scrolling when popup opens
+    //     document.body.style.overflow = 'hidden';
+
+    //     // Re-enable scrolling when popup closes
+    //     return () => {
+    //         document.body.style.overflow = 'unset';
+    //     };
+    // }, []);
+
     const initialValues = {
         name: '',
         email: '',
@@ -82,7 +92,7 @@ const Popup = ({ isCross = true, onClose, courseId }) => {
                 localStorage.setItem('userData', JSON.stringify(userData));
 
                 // Navigate to thank-you page
-                navigate(`/offer/thanks/${courseName}`);
+                navigate(`/sales/thank-you`);
             }
         });
         // console.log('Form submitted:', userData);
@@ -91,12 +101,12 @@ const Popup = ({ isCross = true, onClose, courseId }) => {
 
     return (
         <div
-            className="fixed inset-0 z-50 flex items-center justify-center bg-black/70"
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 min-h-screen"
         // onClick={() => onClose()}
         >
-            <div className="bg-white/80 relative dark:bg-gray-800/80 backdrop-blur-lg rounded-2xl shadow-2xl p-8 border border-gray-100 dark:border-gray-700 animate-slide-in-right hover:shadow-3xl transition-all duration-300">
+            <div className="bg-white/95 dark:bg-gray-800/95 relative backdrop-blur-lg rounded-2xl shadow-2xl p-8 border border-gray-200 dark:border-gray-700 animate-slide-in-right hover:shadow-3xl transition-all duration-300">
                 {isCross &&
-                    <X onClick={onClose} className='w-8 h-8 text-gray-400 dark:text-gray-700 cursor-pointer absolute top-3 right-3 z-100' />
+                    <X onClick={onClose} className='w-8 h-8 text-gray-500 dark:text-gray-400 cursor-pointer absolute top-3 right-3 z-100 hover:text-gray-700 dark:hover:text-gray-200 transition-colors' />
                 }
                 <div className="text-center mb-6">
                     <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2 animate-pulse-subtle">
@@ -120,12 +130,12 @@ const Popup = ({ isCross = true, onClose, courseId }) => {
                                     name="name"
                                     type="text"
                                     placeholder="Full Name"
-                                    className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-transparent dark:bg-gray-700 dark:text-white transition-colors duration-200"
+                                    className="w-full px-4 py-3 bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-transparent text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 transition-colors duration-200"
                                 />
                                 <ErrorMessage
                                     name="name"
                                     component="div"
-                                    className="text-red-600 text-sm mt-1"
+                                    className="text-red-600 dark:text-red-400 text-sm mt-1"
                                 />
                             </div>
 
@@ -134,12 +144,12 @@ const Popup = ({ isCross = true, onClose, courseId }) => {
                                     name="email"
                                     type="email"
                                     placeholder="Email Address"
-                                    className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-transparent dark:bg-gray-700 dark:text-white transition-colors duration-200"
+                                    className="w-full px-4 py-3 bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-transparent text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 transition-colors duration-200"
                                 />
                                 <ErrorMessage
                                     name="email"
                                     component="div"
-                                    className="text-red-600 text-sm mt-1"
+                                    className="text-red-600 dark:text-red-400 text-sm mt-1"
                                 />
                             </div>
 
@@ -148,7 +158,7 @@ const Popup = ({ isCross = true, onClose, courseId }) => {
                                     <Field
                                         name="code"
                                         as="select"
-                                        className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-transparent dark:bg-gray-700 dark:text-white transition-colors duration-200"
+                                        className="w-full px-4 py-3 bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-transparent text-gray-900 dark:text-white transition-colors duration-200"
                                     >
                                         <option value="+91"> IN - India</option>
                                         <option value="+1"> US - United States</option>
@@ -268,7 +278,7 @@ const Popup = ({ isCross = true, onClose, courseId }) => {
                                     <ErrorMessage
                                         name="code"
                                         component="div"
-                                        className="text-red-600 text-sm mt-1"
+                                        className="text-red-600 dark:text-red-400 text-sm mt-1"
                                     />
                                 </div>
                                 <div className="w-2/3">
@@ -276,12 +286,12 @@ const Popup = ({ isCross = true, onClose, courseId }) => {
                                         name="mobile"
                                         type="tel"
                                         placeholder="Phone Number"
-                                        className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-transparent dark:bg-gray-700 dark:text-white transition-colors duration-200"
+                                        className="w-full px-4 py-3 bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-transparent text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 transition-colors duration-200"
                                     />
                                     <ErrorMessage
                                         name="mobile"
                                         component="div"
-                                        className="text-red-600 text-sm mt-1"
+                                        className="text-red-600 dark:text-red-400 text-sm mt-1"
                                     />
                                 </div>
                             </div>
@@ -292,7 +302,7 @@ const Popup = ({ isCross = true, onClose, courseId }) => {
                                     <Field
                                         name="country"
                                         as="select"
-                                        className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-transparent dark:bg-gray-700 dark:text-white transition-colors duration-200"
+                                        className="w-full px-4 py-3 bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-transparent text-gray-900 dark:text-white transition-colors duration-200"
                                         onChange={(e) => {
                                             setFieldValue('country', e.target.value);
                                             const selectedOption = countryData.find(
@@ -311,7 +321,7 @@ const Popup = ({ isCross = true, onClose, courseId }) => {
                                     <ErrorMessage
                                         name="country"
                                         component="div"
-                                        className="text-red-600 text-sm mt-1"
+                                        className="text-red-600 dark:text-red-400 text-sm mt-1"
                                     />
                                 </div>
                             }
@@ -321,7 +331,7 @@ const Popup = ({ isCross = true, onClose, courseId }) => {
                                 <Field
                                     name="experience"
                                     as="select"
-                                    className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-transparent dark:bg-gray-700 dark:text-white transition-colors duration-200"
+                                    className="w-full px-4 py-3 bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-transparent text-gray-900 dark:text-white transition-colors duration-200"
                                 >
                                     <option value="1">Select Experience</option>
                                     <option value="2">1-3 years</option>
@@ -332,7 +342,7 @@ const Popup = ({ isCross = true, onClose, courseId }) => {
                                 <ErrorMessage
                                     name="experience"
                                     component="div"
-                                    className="text-red-600 text-sm mt-1"
+                                    className="text-red-600 dark:text-red-400 text-sm mt-1"
                                 />
                             </div>
 

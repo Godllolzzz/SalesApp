@@ -19,35 +19,10 @@ const DotNet = () => {
 
             {/* Hero Section */}
 
-            <section className="min-h-screen relative bg-gradient-to-br from-slate-950 via-blue-950 to-slate-900 pt-4 px-4 overflow-hidden transition-colors duration-300">
-                <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
-
-                <div className="max-w-7xl mx-auto">
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-end min-h-screen">
-                        {/* Left Column - 2025 Mega Offer */}
-                        <HeroSection />
-                        {/* Right Column - Image Touching Bottom */}
-                        <div className="relative hidden lg:block h-screen">
-                            <div className="sticky top-0 h-screen flex items-end justify-center">
-                                <div className="relative z-10 pb-0">
-                                    <img
-                                        src="/image.png"
-                                        alt="Expert Instructor Teaching Live"
-                                        className="rounded-3xl max-w-full h-auto object-cover drop-shadow-[0_35px_60px_rgba(6,182,212,0.4)]"
-                                    />
-                                </div>
-
-                                {/* Decorative Orbs */}
-                                <div className="absolute top-10 -right-20 w-96 h-96 bg-gradient-to-br from-cyan-400 to-blue-600 rounded-full blur-3xl opacity-30 animate-pulse"></div>
-                                <div className="absolute bottom-10 left-10 w-80 h-80 bg-gradient-to-tr from-sky-400 to-cyan-500 rounded-full blur-3xl opacity-30 animate-pulse"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+            <HeroSection />
             <TrustSection />
             <WhySection />
-            <TransformationFramework />
+            <CloudSandboxDemo />
             <MegaOffer />
 
             {/* Job-Oriented Courses */}
@@ -85,7 +60,7 @@ const DotNet = () => {
                     </div>
                 </div>
             </section>
-            <CloudSandboxDemo />
+            <TransformationFramework />
 
             <ProjectsShowcase />
 
@@ -125,13 +100,13 @@ const DotNet = () => {
                 </div>
             </section>
 
-            {/* Footer */}
-            <footer className="bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 dark:from-slate-950 dark:via-black dark:to-slate-950 text-slate-300 dark:text-slate-400 py-12 px-4 transition-colors duration-300">
+            <footer className="bg-gradient-to-r from-gray-100 via-gray-50 to-gray-100 dark:from-slate-950 dark:via-black dark:to-slate-950 text-gray-700 dark:text-slate-400 py-12 px-4 transition-colors duration-300 border-t border-gray-200 dark:border-slate-800">
                 <div className="max-w-7xl mx-auto text-center">
-                    <p className="text-lg mb-4">© 2025 ScholarHat. All rights reserved.</p>
-                    <p className="text-slate-400">Empowering developers worldwide with cutting-edge training</p>
+                    <p className="text-lg mb-4 text-gray-900 dark:text-slate-300">© 2025 ScholarHat. All rights reserved.</p>
+                    <p className="text-gray-600 dark:text-slate-400">Empowering developers worldwide with cutting-edge training</p>
                 </div>
             </footer>
+
         </div>
     )
 }

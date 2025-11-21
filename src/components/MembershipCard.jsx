@@ -10,7 +10,7 @@ function MembershipCard({ membership }) {
         <div className="relative bg-gradient-to-br from-slate-800 via-slate-900 to-slate-950 dark:from-slate-950 dark:via-black dark:to-slate-950 rounded-3xl overflow-hidden shadow-2xl hover:shadow-cyan-500/20 hover:shadow-[0_20px_60px_rgba(6,182,212,0.3)] transition-all duration-500 hover:scale-[1.01] border border-cyan-500/30">
           {/* Discount Badge */}
           <div className="absolute -top-0 -right-0 z-20">
-            <div className="bg-gradient-to-br from-cyan-400 to-blue-600 text-white px-8 py-4 rounded-bl-3xl text-lg font-black shadow-xl">
+            <div className="bg-gradient-to-br from-cyan-400 to-blue-600 text-white px-6 py-3 md:px-8 md:py-4 rounded-bl-3xl text-lg font-black shadow-xl">
               {membership.discount}
             </div>
           </div>
