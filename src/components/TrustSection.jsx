@@ -64,19 +64,27 @@ function TrustSection() {
 
                 {/* Trust Cards */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 mb-20">
-                    {trustPoints.map((point, i) => {
-                        const Icon = point.icon;
+                    {trustPoints.map((point, index) => {
+                        const Icon = point.icon
                         return (
-                            <div key={i} className="group relative bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 border border-slate-200 dark:border-slate-700 overflow-hidden text-center">
-                                <div className={`absolute inset-0 bg-gradient-to-br ${point.color} opacity-0 group-hover:opacity-10 transition-opacity`} />
-                                <div className={`w-16 h-16 ${point.bgColor} rounded-2xl flex items-center justify-center mb-6 mx-auto group-hover:scale-110 transition-transform shadow-lg`}>
-                                    <div className={`w-14 h-14 bg-Pgradient-to-br ${point.color} rounded-xl flex items-center justify-center`}>
-                                        <Icon className="w-8 h-8 text-white" />
+                            <div
+                                key={index}
+                                className="group relative bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 border border-slate-200 dark:border-slate-700 overflow-hidden"
+                            >
+                                <div className={`absolute inset-0 bg-gradient-to-br ${point.color} opacity-0 group-hover:opacity-5 transition-opacity duration-500`}></div>
+
+                                <div className="relative z-10">
+                                    <div className={`w-16 h-16 ${point.bgColor} rounded-2xl flex items-center justify-center mb-6 mx-auto group-hover:scale-110 transition-transform duration-500 shadow-[8px_8px_0px_0px_rgba(0,0,0,0.1)] dark:shadow-[8px_8px_0px_0px_rgba(255,255,255,0.05)]`}>
+                                        <div className={`w-14 h-14 bg-gradient-to-br ${point.color} rounded-xl flex items-center justify-center`}>
+                                            <Icon className="w-8 h-8 text-white" />
+                                        </div>
                                     </div>
+                                    <p className="text-sm font-bold text-slate-800 dark:text-white leading-snug">{point.text}</p>
                                 </div>
-                                <p className="text-sm font-bold text-slate-800 dark:text-white">{point.text}</p>
+
+                                <div className={`absolute -bottom-20 -right-20 w-40 h-40 bg-gradient-to-br ${point.color} rounded-full blur-3xl opacity-20 group-hover:opacity-30 transition-opacity duration-500`}></div>
                             </div>
-                        );
+                        )
                     })}
                 </div>
 
@@ -102,10 +110,11 @@ function TrustSection() {
                                     src={company.src}
                                     alt={company.alt}
                                     loading="lazy"
-                                    className="h-10 md:h-12 w-auto object-contain 
-                             opacity-85 hover:opacity-100 
-                             hover:scale-125 hover:brightness-110 
-                             transition-all duration-400"
+                                    className="h-10 md:h-12 w-auto object-contain
+                       filter invert brightness-0 brightness-[0] hue-rotate-180 
+                       opacity-85 hover:opacity-100 
+                       hover:scale-125 hover:brightness-150 
+                       transition-all duration-400"
                                 />
                             ))}
                         </div>
