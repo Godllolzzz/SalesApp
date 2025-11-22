@@ -1,96 +1,104 @@
 import { useState, useEffect } from 'react';
-import { Sun, Moon } from 'lucide-react';
-import logo from "../assests/images/logo.png"
+import { Sun, Moon, Timer } from 'lucide-react';
+import logo from "../assests/images/logo.png";
 
 const Header = ({ showButton = true }) => {
     const [isDark, setIsDark] = useState(false);
+    const [showTimer, setShowTimer] = useState(false);
+
+    // Countdown state
+    const [timeLeft, setTimeLeft] = useState({
+        days: 0, hours: 0, minutes: 0, seconds: 0
+    });
 
     useEffect(() => {
-        // Initialize theme on component mount
+        // Theme initialization (your existing code)
         const initializeTheme = () => {
             const savedTheme = localStorage.getItem('theme');
             const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-
             const shouldBeDark = savedTheme === 'dark' || (!savedTheme && prefersDark);
-
             setIsDark(shouldBeDark);
+            document.documentElement.classList.toggle('dark', shouldBeDark);
+        };
+        initializeTheme();
 
-            if (shouldBeDark) {
-                document.documentElement.classList.add('dark');
-            } else {
-                document.documentElement.classList.remove('dark');
+        // Countdown Timer Logic
+        const targetDate = new Date('2025-12-31T23:59:59');
+        const updateTimer = () => {
+            const now = new Date();
+            const diff = targetDate - now;
+            if (diff > 0) {
+                setTimeLeft({
+                    days: Math.floor(diff / (1000 * 60 * 60 * 24)),
+                    hours: Math.floor((diff / (1000 * 60 * 60)) % 24),
+                    minutes: Math.floor((diff / 1000 / 60) % 60),
+                    seconds: Math.floor((diff / 1000) % 60)
+                });
+            }
+        };
+        updateTimer();
+        const timer = setInterval(updateTimer, 1000);
+
+        // Scroll detection: Show timer when Hero is scrolled past
+        const handleScroll = () => {
+            const hero = document.getElementById('hero-section');
+            if (hero) {
+                const heroBottom = hero.getBoundingClientRect().bottom;
+                setShowTimer(heroBottom <= 80); // 80px = header height + buffer
             }
         };
 
-        initializeTheme();
+        window.addEventListener('scroll', handleScroll);
+        handleScroll(); // Initial check
+
+        return () => {
+            clearInterval(timer);
+            window.removeEventListener('scroll', handleScroll);
+        };
     }, []);
 
     const toggleTheme = () => {
         const newIsDark = !isDark;
         setIsDark(newIsDark);
-
-        if (newIsDark) {
-            document.documentElement.classList.add('dark');
-            localStorage.setItem('theme', 'dark');
-        } else {
-            document.documentElement.classList.remove('dark');
-            localStorage.setItem('theme', 'light');
-        }
+        document.documentElement.classList.toggle('dark', newIsDark);
+        localStorage.setItem('theme', newIsDark ? 'dark' : 'light');
     };
 
     return (
-        <header className="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-lg border-b border-gray-200 dark:border-gray-700/50">
-            <div className="container mx-auto px-4">
+        <header className="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-lg border-b border-gray-200 dark:border-gray-700/50 transition-all duration-300">
+            <div className="container mx-auto px-2">
                 <div className="flex items-center justify-between h-16">
-                    {/* Logo Section */}
-                    <a href='/' className="flex items-center gap-1">
+
+                    {/* Logo */}
+                    <a href='/' className="flex items-center gap-1 z-10">
                         <img src={logo} className="w-10 h-10 md:w-12 md:h-12" alt="ScholarHat Logo" />
                         <h1 className="text-xl md:text-2xl font-bold bg-gradient-to-r from-cyan-600 to-blue-600 bg-clip-text text-transparent">
                             ScholarHat
                         </h1>
                     </a>
-                    {/* Navigation Menu - Hidden on mobile, shown on larger screens */}
 
-                    {showButton && <nav className="hidden md:flex items-center space-x-8">
-                        <a href="#trainings" className="text-gray-700 dark:text-gray-300 hover:text-cyan-600 dark:hover:text-cyan-400 font-medium transition-colors duration-200">
-                            Trainings
-                        </a>
-                        <a href="#memberships" className="text-gray-700 dark:text-gray-300 hover:text-cyan-600 dark:hover:text-cyan-400 font-medium transition-colors duration-200">
-                            Memberships
-                        </a>
-                        <a href="#tutors" className="text-gray-700 dark:text-gray-300 hover:text-cyan-600 dark:hover:text-cyan-400 font-medium transition-colors duration-200">
-                            Tutors
-                        </a>
-                        <a href="#reviews" className="text-gray-700 dark:text-gray-300 hover:text-cyan-600 dark:hover:text-cyan-400 font-medium transition-colors duration-200">
-                            Reviews
-                        </a>
-                    </nav>}
+                    {/* Centered Countdown Timer - Only shows on scroll */}
+                    <div className="w-fit pointer-events-none animate-bounce mt-2 lg:mt-3">
+                        <div className={`flex items-center gap-1 sm:gap-3 bg-orange-500 text-white px-3 sm:px-5 py-2 rounded-full shadow-2xl transition-all duration-500 ${showTimer ? 'opacity-100 scale-100' : 'opacity-0 scale-75'}`}>
+                            <Timer className="w-5 h-5 animate-pulse" />
+                            <span className="font-bold text-xs sm:text-sm md:text-xs lg:text-base">
+                                Offer Ends: {timeLeft.days}d {timeLeft.hours}h {timeLeft.minutes}m <span className='hidden sm:inline md:hidden lg:inline'> {timeLeft.seconds}s</span>
+                            </span>
+                        </div>
+                    </div>
 
+                    {/* Navigation (Desktop) */}
+                    {showButton && (
+                        <nav className="hidden md:flex items-center space-x-8 z-10">
+                            <a href="#trainings" className="text-gray-700 dark:text-gray-300 hover:text-cyan-600 dark:hover:text-cyan-400 font-medium transition-colors">Trainings</a>
+                            <a href="#memberships" className="text-gray-700 dark:text-gray-300 hover:text-cyan-600 dark:hover:text-cyan-400 font-medium transition-colors">Membership</a>
+                            <a href="#tutors" className="text-gray-700 dark:text-gray-300 hover:text-cyan-600 dark:hover:text-cyan-400 font-medium transition-colors">Tutors</a>
+                            <a href="#reviews" className="text-gray-700 dark:text-gray-300 hover:text-cyan-600 dark:hover:text-cyan-400 font-medium transition-colors">Reviews</a>
+                        </nav>
+                    )}
 
-                    {/* Right Side - Theme Toggle */}
-                    {/* <div className="flex items-center space-x-4">
-
-                        <button
-                            onClick={toggleTheme}
-                            className="relative p-3 rounded-xl bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-all duration-300 group shadow-lg hover:shadow-xl"
-                            aria-label="Toggle theme"
-                        >
-                            <div className="relative w-6 h-6">
-                                <Sun
-                                    className={`absolute inset-0 w-6 h-6 text-yellow-500 transition-all duration-300 ${isDark ? 'opacity-0 rotate-90 scale-0' : 'opacity-100 rotate-0 scale-100'
-                                        }`}
-                                />
-                                <Moon
-                                    className={`absolute inset-0 w-6 h-6 text-blue-400 transition-all duration-300 ${isDark ? 'opacity-100 rotate-0 scale-100' : 'opacity-0 -rotate-90 scale-0'
-                                        }`}
-                                />
-                            </div>
-
-                            <div className="absolute -bottom-12 left-1/2 transform -translate-x-1/2 bg-gray-900 dark:bg-gray-700 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap">
-                                {isDark ? 'Light mode' : 'Dark mode'}
-                            </div>
-                        </button>
-                    </div> */}
+                    {/* Theme Toggle (Uncomment if you want it back) */}
+                    {/* <button onClick={toggleTheme} className="p-2 ...">...</button> */}
                 </div>
             </div>
         </header>

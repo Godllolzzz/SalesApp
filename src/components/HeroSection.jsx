@@ -31,12 +31,16 @@ function HeroSection() {
     }, [])
 
     return (
-        <section className="pt-20 relative bg-gradient-to-br from-sky-50 via-white to-blue-50 dark:from-slate-950 dark:via-blue-950 dark:to-slate-900 px-2 md:px-4 overflow-hidden transition-colors duration-300">
+        <section id="hero-section" className="pt-20 relative bg-gradient-to-br from-sky-50 via-white to-blue-50 dark:from-slate-950 dark:via-blue-950 dark:to-slate-900 px-2 md:px-4 overflow-hidden transition-colors duration-300">
             <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
 
             <div className="max-w-7xl mx-auto relative z-10">
                 {/* Top Heading - One Line */}
                 <div className="text-center lg:text-left my-4">
+                    <div className="text-2xl text-center md:text-2xl font-bold text-yellow-600 dark:text-yellow-400 animate-bounce lg:text-left">
+                        Offer valit till 31 Dec!
+                    </div>
+
                     <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-gray-900 dark:text-white">
                         The Biggest Tech Career{' '}
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-500 dark:from-cyan-400 dark:via-blue-400 dark:to-purple-400">
@@ -49,9 +53,6 @@ function HeroSection() {
                 <div className=" grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
                     {/* Left Side - Content */}
                     <div className="space-y-6 mb-5">
-                        <div className="text-2xl md:text-3xl font-bold text-yellow-600 dark:text-yellow-400 text-center lg:text-left">
-                            Ends 31 Dec!
-                        </div>
 
                         <div className="flex items-center justify-center lg:justify-start gap-3 text-lg md:text-xl text-gray-900 dark:text-white font-bold">
                             <Flame className="w-7 h-7 text-orange-500 flex-shrink-0" />
