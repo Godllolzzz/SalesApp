@@ -73,14 +73,14 @@ function HeroSection() {
                                     <h3 className="text-lg font-semibold text-gray-800 dark:text-white mb-1">
                                         For Developers:
                                     </h3>
-                                    <div className="flex flex-wrap justify-start gap-3">
+                                    <div className="flex flex-wrap justify-center md:justify-start gap-2 sm:gap-3">
                                         {[
                                             'Full Stack .NET Core',
                                             'Java Full Stack'
                                         ].map((program, idx) => (
                                             <span
                                                 key={idx}
-                                                className="text-sm md:text-base flex items-center gap-1.5 px-3 sm:px-4 py-2 dark:text-white bg-white dark:bg-white/10 backdrop-blur-sm rounded-xl border border-gray-200 dark:border-white/20 shadow-sm hover:shadow transition-shadow"
+                                                className="text-xs md:text-base flex items-center gap-1 sm:gap-1.5 px-2 sm:px-4 py-2 dark:text-white bg-white dark:bg-white/10 backdrop-blur-sm rounded-xl border border-gray-200 dark:border-white/20 shadow-sm hover:shadow transition-shadow"
                                             >
                                                 <CheckCircle className="w-4 h-4 text-green-500 dark:text-green-400 flex-shrink-0" />
                                                 {program}
@@ -94,7 +94,7 @@ function HeroSection() {
                                     <h3 className="text-lg font-semibold text-gray-800 dark:text-white mb-1">
                                         For Architects:
                                     </h3>
-                                    <div className="flex flex-wrap justify-start gap-3">
+                                    <div className="flex flex-wrap justify-center md:justify-start gap-2 sm:gap-3">
                                         {[
                                             '.NET Solution Architect',
                                             'Java Solution Architect',
@@ -102,7 +102,7 @@ function HeroSection() {
                                         ].map((program, idx) => (
                                             <span
                                                 key={idx}
-                                                className="text-sm md:text-base flex items-center gap-1.5 px-3 sm:px-4 py-2 dark:text-white bg-white dark:bg-white/10 backdrop-blur-sm rounded-xl border border-gray-200 dark:border-white/20 shadow-sm hover:shadow transition-shadow"
+                                                className="text-xs md:text-base flex items-center gap-1 sm:gap-1.5 px-2 sm:px-4 py-2 dark:text-white bg-white dark:bg-white/10 backdrop-blur-sm rounded-xl border border-gray-200 dark:border-white/20 shadow-sm hover:shadow transition-shadow"
                                             >
                                                 <CheckCircle className="w-4 h-4 text-green-500 dark:text-green-400 flex-shrink-0" />
                                                 {program}
@@ -116,14 +116,14 @@ function HeroSection() {
                                     <h3 className="text-lg font-semibold text-gray-800 dark:text-white mb-1">
                                         For AI Enthusiasts:
                                     </h3>
-                                    <div className="flex flex-wrap justify-start gap-3">
+                                    <div className="flex flex-wrap justify-center md:justify-start gap-2 sm:gap-3">
                                         {[
                                             'Azure AI & GenAI Engineer',
                                             'AWS AI & GenAI Engineer'
                                         ].map((program, idx) => (
                                             <span
                                                 key={idx}
-                                                className="text-sm md:text-base flex items-center gap-1.5 px-3 sm:px-4 py-2 dark:text-white bg-white dark:bg-white/10 backdrop-blur-sm rounded-xl border border-gray-200 dark:border-white/20 shadow-sm hover:shadow transition-shadow"
+                                                className="text-xs md:text-base flex items-center gap-1 sm:gap-1.5 px-2 sm:px-4 py-2 dark:text-white bg-white dark:bg-white/10 backdrop-blur-sm rounded-xl border border-gray-200 dark:border-white/20 shadow-sm hover:shadow transition-shadow"
                                             >
                                                 <CheckCircle className="w-4 h-4 text-green-500 dark:text-green-400 flex-shrink-0" />
                                                 {program}
