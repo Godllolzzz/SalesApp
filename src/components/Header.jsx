@@ -70,7 +70,7 @@ const Header = ({ showButton = true }) => {
                 <div className="flex items-center justify-between h-16">
 
                     {/* Logo */}
-                    <a href='/' className="flex items-center gap-1 z-10">
+                    <a href='/' className="flex items-center z-10">
                         <img src={logo} className="w-10 h-10 md:w-12 md:h-12" alt="ScholarHat Logo" />
                         <h1 className="text-xl md:text-2xl font-bold bg-gradient-to-r from-cyan-600 to-blue-600 bg-clip-text text-transparent">
                             ScholarHat

@@ -85,7 +85,7 @@ function CourseCard({ course }) {
             {course.icons.map((icon, i) => (
               <div
                 key={i}
-                className="w-12 h-12 p-2 bg-white/20 rounded-xl hover:scale-110 transition-transform"
+                className="w-16 h-16 p-2 bg-white/80 rounded-xl hover:scale-110 transition-transform"
               >
                 <img src={icon} alt="" className="w-full h-full object-contain drop-shadow" />
               </div>

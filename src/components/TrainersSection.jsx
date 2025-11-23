@@ -1,6 +1,7 @@
 import { useCallback } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
 import Autoplay from 'embla-carousel-autoplay';
+import { StarIcon } from 'lucide-react';
 
 function TrainersSection() {
     const trainers = [
@@ -133,9 +134,9 @@ function TrainersSection() {
                                         </div>
 
                                         {/* Badge */}
-                                        <div className="absolute top-4 right-4 px-4 py-1.5 bg-gradient-to-r from-sky-500 to-cyan-600 text-white rounded-full text-xs font-bold shadow-lg">
+                                        {/* <div className="absolute top-4 right-4 px-4 py-1.5 bg-gradient-to-r from-sky-500 to-cyan-600 text-white rounded-full text-xs font-bold shadow-lg">
                                             {trainer.badge}
-                                        </div>
+                                        </div> */}
                                     </div>
 
                                     {/* Content */}
@@ -150,7 +151,7 @@ function TrainersSection() {
                                         <ul className="space-y-3 text-sm text-slate-600 dark:text-slate-300">
                                             {trainer.points.map((point, index) => (
                                                 <li key={index} className="flex items-start gap-3">
-                                                    <span className="text-cyan-500 mt-0.5 text-lg">Star</span>
+                                                    <span className="text-cyan-500 mt-0.5 text-lg"><StarIcon fill='oklch(71.5% 0.143 215.221' /></span>
                                                     <span className="leading-relaxed">{point}</span>
                                                 </li>
                                             ))}
