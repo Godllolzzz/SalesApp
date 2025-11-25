@@ -10,9 +10,9 @@ export const Courses = [
         title: 'Full-Stack .NET Developer Certification Training',
         description: 'Master ASP.NET Core, Web API, Angular/React with real-world projects',
         highlights: ['40+ Hands-on Labs', '2 Real-world Projects', 'Interview Preparation'],
-        priceWas: '₹49,999',
-        priceNow: '₹29,999',
-        discount: '40% OFF',
+        priceWas: '₹49,230',
+        priceNow: '31,999',
+        discount: '35% OFF',
         gradient: 'from-indigo-500 via-purple-500 to-purple-600',
         icons: [
             'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dotnetcore/dotnetcore-original.svg',
@@ -28,9 +28,9 @@ export const Courses = [
         title: 'Advanced Full-Stack Java Developer Certification Training',
         description: 'Spring Boot, AWS Developer, Angular/React - Build production-grade applications',
         highlights: ['50+ Hands-on Labs', 'Interview Q&A', 'Build 2 Real-world Projects'],
-        priceWas: '₹58,999',
-        priceNow: '₹34,999',
-        discount: '41% OFF',
+        priceWas: '₹59,998',
+        priceNow: '₹35,999',
+        discount: '40% OFF',
         gradient: 'from-orange-500 via-red-600 to-pink-600',
         icons: [
             'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg',
@@ -51,9 +51,9 @@ export const Courses = [
             'Microservices and CI/CD',
             'Build 2 Real-world Projects'
         ],
-        priceWas: '₹58,999', // you will update
-        priceNow: '₹34,999', // you will update
-        discount: '41% OFF',
+        priceWas: '₹49,998', // you will update
+        priceNow: '₹29,999', // you will update
+        discount: '40% OFF',
         gradient: 'from-cyan-500 via-teal-600 to-emerald-600',
         icons: [
             // Java
@@ -93,9 +93,9 @@ export const Courses = [
         title: '.NET Solution Architect Certification',
         description: 'Design scalable systems with microservices, cloud & design patterns',
         highlights: ['60+ Architecture Labs', 'System Design Projects', 'Cloud Architecture'],
-        priceWas: '₹64,999',
-        priceNow: '₹38,999',
-        discount: '40% OFF',
+        priceWas: '₹61,536',
+        priceNow: '₹39,998',
+        discount: '35% OFF',
         gradient: 'from-sky-400 via-blue-500 to-indigo-600',
         icons: [
             'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg',
@@ -112,9 +112,9 @@ export const Courses = [
         title: 'Java Solution Architect Certification Training',
         description: 'Master Design Patterns, Microservices Architecture & AWS DevOps',
         highlights: ['60+ Hands-on Labs', 'Interview Q&A', 'Build 2 Real-world Projects'],
-        priceWas: '₹64,999',
-        priceNow: '₹38,999',
-        discount: '42% OFF',
+        priceWas: '₹66,663',
+        priceNow: '₹39,998',
+        discount: '40% OFF',
         gradient: 'from-blue-600 via-cyan-600 to-teal-700',
         icons: [
             'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg',
@@ -130,9 +130,9 @@ export const Courses = [
         title: 'Azure AI & Gen AI Engineer',
         description: 'Master AI, Machine Learning, LLMs and Generative AI technologies',
         highlights: ['50+ AI/ML Labs', '4 AI Projects', 'Gen AI & LLMs'],
-        priceWas: '₹54,999',
-        priceNow: '₹32,999',
-        discount: '40% OFF',
+        priceWas: '₹76,922',
+        priceNow: '₹49,999',
+        discount: '35% OFF',
         gradient: 'from-teal-400 via-cyan-500 to-cyan-600',
         icons: [
             'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg',
@@ -148,8 +148,8 @@ export const Courses = [
         title: 'AWS AI & Gen AI Engineer Certification Training',
         description: 'Master Python, AWS AI Services, Generative AI, LLMs with hands-on projects',
         highlights: ['50+ Hands-on Labs', 'Interview Q&A', 'Build 4 Real-world Projects'],
-        priceWas: '₹56,999',
-        priceNow: '₹33,999',
+        priceWas: '₹79,998',
+        priceNow: '₹47,999',
         discount: '40% OFF',
         gradient: 'from-purple-600 via-indigo-600 to-blue-700',
         icons: [
