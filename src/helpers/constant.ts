@@ -2,12 +2,12 @@ export const API_ADDRESS: string = 'https://www.scholarhat.com/api';
 
 export const whatsappLink: string = "https://www.whatsapp.com/channel/0029VaEFj7IL7UVeLUzDiM1k";
 
-export const donNetCourses = [
+export const Courses = [
     {
         id: 166,
-        category: 'NET',
+        category: 'For Developers',
         level: 'BEGINNER FRIENDLY',
-        title: 'Full-Stack .NET Developer Certification',
+        title: 'Full-Stack .NET Developer Certification Training',
         description: 'Master ASP.NET Core, Web API, Angular/React with real-world projects',
         highlights: ['40+ Hands-on Labs', '2 Real-world Projects', 'Interview Preparation'],
         priceWas: '₹49,999',
@@ -22,83 +22,8 @@ export const donNetCourses = [
         featured: false
     },
     {
-        id: 444,
-        category: 'NET',
-        level: 'ADVANCED LEVEL',
-        title: 'Advanced Full-Stack .NET Developer',
-        description: 'Deep dive into .NET Core, Azure, Microservices & Enterprise Architecture',
-        highlights: ['70+ Hands-on Labs', '3 Real-world Projects', 'Azure DevOps Training'],
-        priceWas: '₹59,999',
-        priceNow: '₹35,999',
-        discount: '40% OFF',
-        gradient: 'from-emerald-400 via-teal-500 to-cyan-600',
-        icons: [
-            'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dotnetcore/dotnetcore-original.svg',
-            'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg',
-            'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg'
-        ],
-        featured: true
-    },
-    {
-        id: 87,
-        category: 'NET',
-        level: 'ARCHITECT TRACK',
-        title: '.NET Solution Architect Certification',
-        description: 'Design scalable systems with microservices, cloud & design patterns',
-        highlights: ['60+ Architecture Labs', 'System Design Projects', 'Cloud Architecture'],
-        priceWas: '₹64,999',
-        priceNow: '₹38,999',
-        discount: '40% OFF',
-        gradient: 'from-sky-400 via-blue-500 to-indigo-600',
-        icons: [
-            'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg',
-            'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg',
-            'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg'
-        ],
-        featured: false
-    },
-    {
-        id: 419,
-        category: 'AI',
-        level: 'AI/ML SPECIALIST',
-        title: 'Azure AI & Gen AI Engineer',
-        description: 'Master AI, Machine Learning, LLMs and Generative AI technologies',
-        highlights: ['50+ AI/ML Labs', '4 AI Projects', 'Gen AI & LLMs'],
-        priceWas: '₹54,999',
-        priceNow: '₹32,999',
-        discount: '40% OFF',
-        gradient: 'from-teal-400 via-cyan-500 to-cyan-600',
-        icons: [
-            'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg',
-            'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg',
-            'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg'
-        ],
-        featured: false
-    },
-
-    // ==================== NEW COURSES ====================
-
-    {
-        id: 427, // replace later
-        category: 'AI',
-        level: 'BEGINNER TO EXPERIENCED',
-        title: 'AWS AI & Gen AI Engineer Certification Training',
-        description: 'Master Python, AWS AI Services, Generative AI, LLMs with hands-on projects',
-        highlights: ['50+ Hands-on Labs', 'Interview Q&A', 'Build 4 Real-world Projects'],
-        priceWas: '₹56,999',
-        priceNow: '₹33,999',
-        discount: '40% OFF',
-        gradient: 'from-purple-600 via-indigo-600 to-blue-700',
-        icons: [
-            'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg',
-            'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg',
-            'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg'
-        ],
-        featured: true
-    },
-    {
         id: 355, // replace later
-        category: 'JAVA',
+        category: 'For Developers',
         level: 'EXPERIENCED',
         title: 'Advanced Full-Stack Java Developer Certification Training',
         description: 'Spring Boot, AWS Developer, Angular/React - Build production-grade applications',
@@ -115,8 +40,74 @@ export const donNetCourses = [
         featured: false
     },
     {
+        id: 579,
+        category: 'For Developers',
+        level: 'EXPERIENCED',
+        title: 'Java Microservices & AWS Certification Training',
+        description: 'Spring Boot, AWS Developer – Master Microservices, Cloud Deployments, and Production Architecture',
+        highlights: [
+            '60+ Hands-on Labs',
+            'Interview Q&A',
+            'Microservices and CI/CD',
+            'Build 2 Real-world Projects'
+        ],
+        priceWas: '₹58,999', // you will update
+        priceNow: '₹34,999', // you will update
+        discount: '41% OFF',
+        gradient: 'from-cyan-500 via-teal-600 to-emerald-600',
+        icons: [
+            // Java
+            'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg',
+            // Spring Boot
+            'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg',
+            // AWS
+            'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg',
+            // Docker (for CI/CD & Microservices)
+            'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg'
+        ],
+        featured: false
+    }
+    ,
+    // {
+    //     id: 444,
+    //     category: 'NET',
+    //     level: 'ADVANCED LEVEL',
+    //     title: 'Advanced Full-Stack .NET Developer',
+    //     description: 'Deep dive into .NET Core, Azure, Microservices & Enterprise Architecture',
+    //     highlights: ['70+ Hands-on Labs', '3 Real-world Projects', 'Azure DevOps Training'],
+    //     priceWas: '₹59,999',
+    //     priceNow: '₹35,999',
+    //     discount: '40% OFF',
+    //     gradient: 'from-emerald-400 via-teal-500 to-cyan-600',
+    //     icons: [
+    //         'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dotnetcore/dotnetcore-original.svg',
+    //         'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg',
+    //         'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg'
+    //     ],
+    //     featured: true
+    // },
+    {
+        id: 87,
+        category: 'For Architects',
+        level: 'ARCHITECT TRACK',
+        title: '.NET Solution Architect Certification',
+        description: 'Design scalable systems with microservices, cloud & design patterns',
+        highlights: ['60+ Architecture Labs', 'System Design Projects', 'Cloud Architecture'],
+        priceWas: '₹64,999',
+        priceNow: '₹38,999',
+        discount: '40% OFF',
+        gradient: 'from-sky-400 via-blue-500 to-indigo-600',
+        icons: [
+            'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg',
+            'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg',
+            'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg'
+        ],
+        featured: false
+    },
+
+    {
         id: 1038, // replace later
-        category: 'JAVA',
+        category: 'For Architects',
         level: 'EXPERIENCED',
         title: 'Java Solution Architect Certification Training',
         description: 'Master Design Patterns, Microservices Architecture & AWS DevOps',
@@ -133,23 +124,63 @@ export const donNetCourses = [
         featured: false
     },
     {
-        id: 579, // replace later
-        category: 'JAVA',
-        level: 'EXPERIENCED',
-        title: 'Java Microservices & AWS Certification Training',
-        description: 'Spring Boot, AWS, Microservices Architecture, CI/CD Pipelines',
-        highlights: ['60+ Hands-on Labs', 'Interview Q&A', 'Build 2 Real-world Projects'],
-        priceWas: '₹62,999',
-        priceNow: '₹36,999',
-        discount: '42% OFF',
-        gradient: 'from-green-500 via-emerald-600 to-teal-700',
+        id: 419,
+        category: 'For AI Enthusiasts',
+        level: 'AI/ML SPECIALIST',
+        title: 'Azure AI & Gen AI Engineer',
+        description: 'Master AI, Machine Learning, LLMs and Generative AI technologies',
+        highlights: ['50+ AI/ML Labs', '4 AI Projects', 'Gen AI & LLMs'],
+        priceWas: '₹54,999',
+        priceNow: '₹32,999',
+        discount: '40% OFF',
+        gradient: 'from-teal-400 via-cyan-500 to-cyan-600',
         icons: [
-            'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg',
-            'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg',
-            'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg'
+            'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg',
+            'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg',
+            'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg'
         ],
         featured: false
-    }
+    },
+    {
+        id: 427, // replace later
+        category: 'For AI Enthusiasts',
+        level: 'BEGINNER TO EXPERIENCED',
+        title: 'AWS AI & Gen AI Engineer Certification Training',
+        description: 'Master Python, AWS AI Services, Generative AI, LLMs with hands-on projects',
+        highlights: ['50+ Hands-on Labs', 'Interview Q&A', 'Build 4 Real-world Projects'],
+        priceWas: '₹56,999',
+        priceNow: '₹33,999',
+        discount: '40% OFF',
+        gradient: 'from-purple-600 via-indigo-600 to-blue-700',
+        icons: [
+            'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg',
+            'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg',
+            'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg'
+        ],
+        featured: true
+    },
+
+    // ==================== NEW COURSES ====================
+
+
+    // {
+    //     id: 579, // replace later
+    //     category: 'JAVA',
+    //     level: 'EXPERIENCED',
+    //     title: 'Java Microservices & AWS Certification Training',
+    //     description: 'Spring Boot, AWS, Microservices Architecture, CI/CD Pipelines',
+    //     highlights: ['60+ Hands-on Labs', 'Interview Q&A', 'Build 2 Real-world Projects'],
+    //     priceWas: '₹62,999',
+    //     priceNow: '₹36,999',
+    //     discount: '42% OFF',
+    //     gradient: 'from-green-500 via-emerald-600 to-teal-700',
+    //     icons: [
+    //         'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg',
+    //         'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg',
+    //         'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg'
+    //     ],
+    //     featured: false
+    // }
 ];
 export const dotNetMemberships = [
     {

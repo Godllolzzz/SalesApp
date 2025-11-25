@@ -76,7 +76,8 @@ function HeroSection() {
                                     <div className="flex flex-wrap justify-center md:justify-start gap-2 sm:gap-3">
                                         {[
                                             'Full Stack .NET Core',
-                                            'Java Full Stack'
+                                            'Java Full Stack',
+                                            'Java Microservices'
                                         ].map((program, idx) => (
                                             <span
                                                 key={idx}

@@ -66,21 +66,21 @@ function MembershipCard({ membership }) {
 
             {/* RIGHT - What's Included */}
             <div className="p-6 sm:p-8 pt-8 sm:pt-8">
-              <h4 className="text-lg sm:text-xl font-bold text-white mb-4 sm:mb-5">What's included</h4>
+              <h4 className="text-lg sm:text-xl font-bold text-white mb-2 sm:mb-3">What's included</h4>
 
-              <div className="space-y-3 sm:space-y-4">
+              <div className="space-y-2 sm:space-y-3">
                 {membership.sections.map((section, idx) => (
                   <div key={idx}>
-                    <div className="flex items-center gap-2 mb-1.5">
-                      <div className="w-9 h-9 rounded-full bg-gradient-to-br from-cyan-400 to-blue-500 flex items-center justify-center flex-shrink-0">
-                        <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
+                    <div className="flex items-center gap-2 mb-1">
+                      <div className="w-6 h-6 rounded-full bg-gradient-to-br from-cyan-400 to-blue-500 flex items-center justify-center flex-shrink-0">
+                        <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
                           <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                         </svg>
                       </div>
                       <h5 className="text-base font-bold text-cyan-400">{section.title}</h5>
                     </div>
 
-                    <ul className="space-y-1.5 ml-12 text-sm text-slate-300">
+                    <ul className="space-y-1 ml-12 text-sm text-slate-300">
                       {section.items.map((item, i) => (
                         <li key={i} className="flex items-start gap-2 leading-snug">
                           <span className="text-cyan-500">•</span>

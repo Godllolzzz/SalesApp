@@ -28,7 +28,7 @@ function CourseCard({ course }) {
           )} */}
 
           {/* Main Content */}
-          <div className="p-5 md:p-6 flex flex-col flex-grow">
+          <div className="p-4 md:p-5 flex flex-col flex-grow">
             {/* Level + Discount */}
             <div className="flex justify-between items-start mb-4">
               <span className="px-3 py-1 bg-white/20 backdrop-blur text-white text-xs font-semibold rounded-full">
@@ -81,11 +81,11 @@ function CourseCard({ course }) {
           </div>
 
           {/* Tech Icons – Bottom Bar */}
-          <div className="flex justify-center gap-3 p-4 bg-white/10 border-t border-white/10 flex-wrap">
+          <div className="flex justify-center gap-3 p-3 bg-white/10 border-t border-white/10 flex-wrap">
             {course.icons.map((icon, i) => (
               <div
                 key={i}
-                className="w-16 h-16 p-2 bg-white/80 rounded-xl hover:scale-110 transition-transform"
+                className="w-12 h-12 p-2 bg-white/80 rounded-xl hover:scale-110 transition-transform"
               >
                 <img src={icon} alt="" className="w-full h-full object-contain drop-shadow" />
               </div>

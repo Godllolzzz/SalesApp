@@ -16,7 +16,7 @@ function MegaOffer() {
                     <div className="flex items-center justify-center gap-3 mb-2">
                         <Gift className="w-10 h-10 text-orange-600" />
                         <h2 className="text-3xl md:text-4xl font-black text-slate-900 dark:text-white">
-                            Year-End Mega Offer 2024
+                            Year-End Mega Offer 2025
                         </h2>
                     </div>
                     <p className="text-lg font-bold text-orange-600">Enroll Now & Save BIG — This Offer Comes Once a Year</p>

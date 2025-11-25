@@ -1,43 +1,4 @@
 import { Award, Cloud, Users, TrendingUp, Calendar } from 'lucide-react';
-import microsoftImg from '../assests/images/companies/microsoft.png';
-import googleImg from '../assests/images/companies/google.svg';
-import metaImg from '../assests/images/companies/meta.svg';
-import amazonImg from '../assests/images/companies/amazon.svg';
-import ibmImg from '../assests/images/companies/ibm.svg';
-import adobeImg from '../assests/images/companies/adobe.svg';
-import capgeminiImg from '../assests/images/companies/capgimini.png';
-import tcsImg from '../assests/images/companies/tcs.png';
-import ciscoImg from '../assests/images/companies/cisco.png';
-import samsungImg from '../assests/images/companies/samsung.svg';
-import oracleImg from '../assests/images/companies/oracle.svg';
-import infosysImg from '../assests/images/companies/infosys.png';
-import paytmImg from '../assests/images/companies/paytm.svg';
-import twitterImg from '../assests/images/companies/twitter.png';
-import cognizantImg from '../assests/images/companies/cognizant.svg';
-import accentureImg from '../assests/images/companies/accenture.svg';
-import dellImg from '../assests/images/companies/dell.png';
-import techmImg from '../assests/images/companies/techm.png';
-
-const companyLogos = [
-    { src: microsoftImg, alt: 'Microsoft' },
-    { src: googleImg, alt: 'Google' },
-    { src: metaImg, alt: 'Meta' },
-    { src: amazonImg, alt: 'Amazon' },
-    { src: ibmImg, alt: 'IBM' },
-    { src: adobeImg, alt: 'Adobe' },
-    { src: capgeminiImg, alt: 'Capgemini' },
-    { src: tcsImg, alt: 'TCS' },
-    { src: ciscoImg, alt: 'Cisco' },
-    { src: samsungImg, alt: 'Samsung' },
-    { src: oracleImg, alt: 'Oracle' },
-    { src: infosysImg, alt: 'Infosys' },
-    { src: paytmImg, alt: 'Paytm' },
-    { src: twitterImg, alt: 'X (Twitter)' },
-    { src: cognizantImg, alt: 'Cognizant' },
-    { src: accentureImg, alt: 'Accenture' },
-    { src: dellImg, alt: 'Dell' },
-    { src: techmImg, alt: 'Tech Mahindra' },
-];
 
 function TrustSection() {
     const trustPoints = [
@@ -49,11 +10,11 @@ function TrustSection() {
     ];
 
     return (
-        <section className="py-20 px-4 bg-gradient-to-br from-slate-50 via-white to-slate-50 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950">
+        <section className="py-8 md:py-12 px-4 bg-gradient-to-br from-slate-50 via-white to-slate-50 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950">
             <div className="max-w-7xl mx-auto">
 
                 {/* Why Choose Section */}
-                <div className="text-center mb-16">
+                <div className="text-center mb-8 md:mb-16">
                     <h2 className="text-4xl md:text-5xl font-black mb-4 text-slate-900 dark:text-white">
                         Why Choose <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 to-blue-600">ScholarHat</span>
                     </h2>
@@ -63,13 +24,13 @@ function TrustSection() {
                 </div>
 
                 {/* Trust Cards */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 mb-20">
+                <div className="grid grid-cols-2 lg:grid-cols-5 gap-3 md:gap-6">
                     {trustPoints.map((point, index) => {
                         const Icon = point.icon
                         return (
                             <div
                                 key={index}
-                                className="group relative bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 border border-slate-200 dark:border-slate-700 overflow-hidden"
+                                className="group relative bg-white dark:bg-slate-800 rounded-2xl p-4 md:p-8 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 border border-slate-200 dark:border-slate-700 overflow-hidden"
                             >
                                 <div className={`absolute inset-0 bg-gradient-to-br ${point.color} opacity-0 group-hover:opacity-5 transition-opacity duration-500`}></div>
 
@@ -88,39 +49,6 @@ function TrustSection() {
                     })}
                 </div>
 
-                {/* Alumni Companies Section */}
-                <div className="relative bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 dark:from-slate-950 dark:via-blue-950 dark:to-slate-950 rounded-3xl p-12 shadow-2xl overflow-hidden">
-                    <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
-                    <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-cyan-500/20 to-blue-500/20 rounded-full blur-3xl"></div>
-                    <div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-blue-500/20 to-purple-500/20 rounded-full blur-3xl"></div>
-
-                    <div className="relative z-10 text-center">
-                        <h3 className="text-3xl md:text-4xl font-black text-white mb-3">
-                            Our Alumni Work At
-                        </h3>
-                        <p className="text-cyan-300 font-semibold mb-12">
-                            Join thousands of developers at top companies
-                        </p>
-
-                        {/* Full Color Logos – Minimum 4 rows */}
-                        <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-8 md:gap-10 justify-items-center items-center">
-                            {companyLogos.map((company, index) => (
-                                <img
-                                    key={index}
-                                    src={company.src}
-                                    alt={company.alt}
-                                    loading="lazy"
-                                    className="h-10 md:h-12 w-auto object-contain
-                       filter invert brightness-0 brightness-[0] hue-rotate-180 
-                       opacity-85 hover:opacity-100 
-                       hover:scale-125 hover:brightness-150 
-                       transition-all duration-400"
-                                />
-                            ))}
-                        </div>
-
-                    </div>
-                </div>
             </div>
         </section>
     );

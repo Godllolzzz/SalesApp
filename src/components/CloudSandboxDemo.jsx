@@ -6,7 +6,7 @@ import skillAssessmentImg from '../assests/images/SkillAssesment.png'
 function CloudSandboxAndLabsDemo() {
     return (
         <section className="py-8 sm:py-12 md:py-16 px-2 sm:px-4 bg-gradient-to-br from-cyan-900 via-blue-900 to-slate-900 overflow-hidden">
-            <div className="max-w-7xl mx-auto">
+            <div className="max-w-8xl mx-auto">
                 {/* Headline */}
                 <div className="text-center mb-8 sm:mb-12 md:mb-16">
                     <h2 className="text-3xl md:text-5xl font-black mb-4 text-white">
@@ -23,7 +23,7 @@ function CloudSandboxAndLabsDemo() {
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 xl:gap-12">
                     {/* Cloud Sandbox Card */}
                     <div className="group h-full">
-                        <div className="bg-white/5 max-w-2xl mx-auto backdrop-blur-sm border border-white/20 rounded-2xl overflow-hidden shadow-2xl 
+                        <div className="bg-white/5 max-w-3xl mx-auto lg:mr-0 backdrop-blur-sm border border-white/20 rounded-2xl overflow-hidden shadow-2xl 
                     transition-all duration-500 hover:shadow-cyan-500/20 hover:border-cyan-400/50 
                     flex flex-col">
                             <h3 className="text-2xl px-4 py-3 font-black text-white flex items-center gap-3">
@@ -38,17 +38,11 @@ function CloudSandboxAndLabsDemo() {
                             // No fixed height → image decides its own height
                             />
 
-                            <div className="p-4 md:p-8 flex-1">
-                                <div className="space-y-2 sm:space-y-4 md:space-y-5">
-                                    <FeatureItem icon={<Cloud className="w-7 h-7" />}
-                                        title="Real Azure/AWS/GCP Environments"
-                                        desc="Spin up actual cloud resources instantly" />
-                                    <FeatureItem icon={<Terminal className="w-7 h-7" />}
-                                        title="Browser-Based IDE + CLI"
-                                        desc="VS Code experience + full terminal access" />
-                                    <FeatureItem icon={<Zap className="w-7 h-7" />}
-                                        title="Zero Setup, Instant Deploy"
-                                        desc="Deploy apps and pipelines in seconds" />
+                            <div className="p-2 sm:p-4 md:p-6">
+                                <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 sm:gap-3 md:gap-4">
+                                    <FeatureMini icon={<Cloud className="w-6 h-6" />} title="Real Cloud Labs" desc="AWS, Azure, GCP" />
+                                    <FeatureMini icon={<Terminal className="w-6 h-6" />} title="Full IDE + CLI" desc="No installation needed" />
+                                    <FeatureMini icon={<Zap className="w-6 h-6" />} title="Instant Deploy" desc="Live in seconds" />
                                 </div>
                             </div>
                         </div>
@@ -56,7 +50,7 @@ function CloudSandboxAndLabsDemo() {
 
                     {/* Hands-on Labs Card */}
                     <div className="group h-full">
-                        <div className="bg-white/5 max-w-2xl mx-auto backdrop-blur-sm border border-white/20 rounded-2xl overflow-hidden shadow-2xl 
+                        <div className="bg-white/5 max-w-3xl mx-auto lg:ml-0 backdrop-blur-sm border border-white/20 rounded-2xl overflow-hidden shadow-2xl 
                     transition-all duration-500 hover:shadow-blue-500/20 hover:border-blue-400/50 
                     flex flex-col">
                             <h3 className="text-2xl px-4 py-3 font-black text-white flex items-center gap-3">
@@ -70,17 +64,23 @@ function CloudSandboxAndLabsDemo() {
                             // Full natural image height – never cut
                             />
 
-                            <div className="p-4 md:p-8 flex-1">
-                                <div className="space-y-2 sm:space-y-4 md:space-y-5">
-                                    <FeatureItem icon={<Bot className="w-7 h-7" />} color="text-blue-400"
+                            <div className="p-2 sm:p-4 md:p-6 flex-1">
+                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3 md:gap-4">
+                                    <FeatureMini
+                                        icon={<Bot className="w-7 h-7" />}
                                         title="AI & GenAI Labs"
-                                        desc="Build LLM apps, RAG pipelines, agents" />
-                                    <FeatureItem icon={<Beaker className="w-7 h-7" />} color="text-blue-400"
+                                        desc="Build LLM apps, RAG pipelines, agents"
+                                    />
+                                    <FeatureMini
+                                        icon={<Beaker className="w-7 h-7" />}
                                         title="Guided Step-by-Step Labs"
-                                        desc="From beginner to advanced scenarios" />
-                                    <FeatureItem icon={<Monitor className="w-7 h-7" />} color="text-blue-400"
+                                        desc="From beginner to advanced scenarios"
+                                    />
+                                    {/* <FeatureMini
+                                        icon={<Monitor className="w-7 h-7" />}
                                         title="Real-Time Feedback & Scoring"
-                                        desc="Instant validation of your solutions" />
+                                        desc="Instant validation of your solutions"
+                                    /> */}
                                 </div>
                             </div>
                         </div>
@@ -91,14 +91,14 @@ function CloudSandboxAndLabsDemo() {
     )
 }
 
-/* Reusable feature item */
-function FeatureItem({ icon, title, desc, color = "text-cyan-400" }) {
+
+function FeatureMini({ icon, title, desc }) {
     return (
-        <div className="flex gap-4 items-start p-1">
-            <div className={color}>{icon}</div>
+        <div className="flex gap-2 sm:gap-4 items-start bg-white/5 rounded-xl p-4 hover:bg-white/10 transition">
+            <div className="text-cyan-400 mt-0.5">{icon}</div>
             <div>
-                <div className="text-white font-bold text-base sm:text-lg">{title}</div>
-                <div className="text-cyan-300 text-xs sm:text-sm mt-1">{desc}</div>
+                <div className="text-white font-semibold text-base">{title}</div>
+                <div className="text-cyan-300 text-xs mt-1">{desc}</div>
             </div>
         </div>
     )

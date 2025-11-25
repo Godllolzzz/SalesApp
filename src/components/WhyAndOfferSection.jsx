@@ -63,7 +63,7 @@ function WhyAndOfferSection() {
                     <div className="order-1 lg:order-2">
                         <div className="flex items-center justify-center gap-2 md:gap-3 mb-3 md:mb-4">
                             <Gift className="w-7 h-7 md:w-10 md:h-10 text-white" />
-                            <h2 className="text-2xl md:text-3xl lg:text-4xl font-black dark:text-white">Year-End Mega Offer 2024</h2>
+                            <h2 className="text-2xl md:text-3xl lg:text-4xl font-black dark:text-white">Year-End Mega Offer 2025</h2>
                         </div>
                         <p className="text-orange-500 text-center font-bold text-sm md:text-lg mb-4">Enroll Now & Save BIG — This Offer Comes Once a Year</p>
                         <div className="bg-gradient-to-br from-cyan-50 via-blue-50 to-sky-50 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950 rounded-2xl md:rounded-3xl shadow-2xl overflow-hidden border border-slate-200 dark:border-slate-700">

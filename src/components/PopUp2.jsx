@@ -5,10 +5,10 @@ import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import { ArrowRight, Rocket, X } from 'lucide-react';
 import DataService from '../services/DataService';
-import { donNetCourses, dotNetMemberships } from '../helpers/constant';
+import { Courses, dotNetMemberships } from '../helpers/constant';
 
 const coursesToShow = [
-    ...donNetCourses.map(c => ({ id: c.id, title: c.title, type: 'course' })),
+    ...Courses.map(c => ({ id: c.id, title: c.title, type: 'course' })),
     ...dotNetMemberships.map(m => ({ id: m.id, title: m.title, type: 'membership' }))
 ];
 

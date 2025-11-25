@@ -10,27 +10,24 @@ import MegaOffer from '../components/MegaOffer';
 import TransformationFramework from '../components/TransformationFramework';
 import ProjectsShowcase from '../components/ProjectsShowcase';
 import TrainersSection from '../components/TrainersSection';
-import { doNetSuccessStories, donNetCourses, dotNetMemberships } from '../helpers/constant';
+import { doNetSuccessStories, Courses, dotNetMemberships } from '../helpers/constant';
 import Reviews from '../components/Reviews';
 import StickyTimerBar from '../components/StickyTimebar';
 import { LearningApproachSection } from '../components/LearningApproachSection';
 import SkillAssessmentAndInterviewPrep from '../components/SkillAssessmentAndInterviewPrep';
 import WhyAndOfferSection from '../components/WhyAndOfferSection';
 import Popup2 from '../components/PopUp2';
+import Alumni from '../components/Alumni';
 
 const DotNet = () => {
     const [isPopUpOpen, setIsPopupOpen] = useState(false);
     const [activeTab, setActiveTab] = useState('NET');
 
     const tabs = [
-        { id: 'NET', label: '.NET Platform' },
-        { id: 'JAVA', label: 'Java Platform' },
-        { id: 'AI', label: 'AI Platform' },
+        { id: 'For Developers', label: 'For Developers' },
+        { id: 'For Architects', label: 'For Architects' },
+        { id: 'For AI Enthusiasts', label: 'For AI Enthusiasts' },
     ];
-
-    const filteredCourses = donNetCourses.filter(
-        (course) => course.category === activeTab
-    );
 
     return (
         <div className="min-h-screen bg-white dark:bg-slate-900 transition-colors duration-300">
@@ -49,66 +46,47 @@ const DotNet = () => {
             {/* Job-Oriented Courses Section */}
             <section className="py-16 px-4 bg-gradient-to-br from-cyan-50 via-blue-50 to-sky-50 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950">
                 <div className="max-w-7xl mx-auto">
-                    <div className="text-center mb-10">
+                    {/* Main Heading */}
+                    <div className="text-center mb-8 md:mb-12">
                         <h2 className="text-4xl md:text-5xl font-bold mb-4 text-slate-900 dark:text-white">
                             Our Job-Oriented <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 to-blue-600">Courses</span>
                         </h2>
-                        <p className="text-slate-600 dark:text-slate-400 text-lg">
+                        <p className="text-slate-600 dark:text-slate-400 text-lg max-w-2xl mx-auto">
                             Master skills with expert-led training and land your dream job
                         </p>
                     </div>
 
-                    <div className="flex justify-center mb-8 md:mb-12">
-                        <div className="relative w-full md:w-auto inline-flex items-center bg-slate-100 dark:bg-slate-800/60 rounded-full p-1.5 md:p-2 border border-slate-200 dark:border-slate-700 shadow-inner">
+                    {/* All Categories Sequentially */}
+                    {tabs.map((category) => {
+                        const categoryCourses = Courses.filter((course) => course.category === category.id);
 
-                            {/* Moving Blue Pill - Perfect Gap on All Sides */}
-                            <div
-                                layout
-                                transition={{ type: "spring", stiffness: 500, damping: 32 }}
-                                className="absolute top-1.5 bottom-1.5 left-1.5 right-[calc(100%-1.5rem)] rounded-full bg-gradient-to-r from-cyan-500 via-blue-500 to-cyan-600 shadow-lg"
-                                style={{
-                                    width: `calc(${100 / tabs.length}% - 12px)`,   // 12px gap = 6px each side (mobile+desktop safe)
-                                    left: `${tabs.findIndex(tab => tab.id === activeTab) * (100 / tabs.length)}%`,
-                                    transform: 'translateX(6px)', // Perfect centering
-                                }}
-                            />
+                        if (categoryCourses.length === 0) return null;
 
-                            {/* Tab Buttons - Fully Responsive */}
-                            {tabs.map((tab) => (
-                                <button
-                                    key={tab.id}
-                                    onClick={() => setActiveTab(tab.id)}
-                                    className={`
-          relative z-10 flex-1 
-          px-3 py-2.5 text-xs 
-          sm:px-5 sm:py-3 sm:text-sm 
-          md:px-8 md:py-4 md:text-base 
-          font-semibold transition-all duration-300
-        `}
-                                >
-                                    <span className={`hidden md:block whitespace-nowrap ${activeTab === tab.id ? 'text-white drop-shadow-md' : 'text-slate-600 dark:text-slate-300'}`}>
-                                        {tab.label}
+                        return (
+                            <div key={category.id} className="mb-8 md:mb-12 last:mb-0">
+                                {/* Category Title */}
+                                <h3 className="text-3xl md:text-4xl font-bold text-slate-800 dark:text-white mb-10 text-center">
+                                    {category.label.split(' ')[0]} <span className='text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 to-blue-600'>
+                                        {category.label.split(' ').slice(1).join(' ')}
                                     </span>
-                                    <span className={`md:hidden block whitespace-nowrap ${activeTab === tab.id ? 'text-white drop-shadow-md' : 'text-slate-600 dark:text-slate-300'}`}>
-                                        {tab.label.split(' ')[0]}
-                                    </span>
-                                </button>
-                            ))}
-                        </div>
-                    </div>
+                                </h3>
 
-                    {/* Courses Grid */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-                        {filteredCourses.length > 0 ? (
-                            filteredCourses.map((course) => (
-                                <CourseCard key={course.id} course={course} />
-                            ))
-                        ) : (
-                            <p className="col-span-full text-center text-slate-500 py-12 text-lg">
-                                No courses available in this category yet.
-                            </p>
-                        )}
-                    </div>
+                                {/* Courses Grid */}
+                                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+                                    {categoryCourses.map((course) => (
+                                        <CourseCard key={course.id} course={course} />
+                                    ))}
+                                </div>
+                            </div>
+                        );
+                    })}
+
+                    {/* Fallback if no courses at all */}
+                    {Courses.length === 0 && (
+                        <p className="text-center text-slate-500 py-16 text-lg">
+                            No courses available at the moment. Please check back later.
+                        </p>
+                    )}
                 </div>
             </section>
 
@@ -136,7 +114,7 @@ const DotNet = () => {
             {/* <TransformationFramework /> */}
             {/* <LearningApproachSection /> */}
             <ProjectsShowcase />
-
+            <Alumni />
             {/* Success Stories */}
             <Reviews />
 
