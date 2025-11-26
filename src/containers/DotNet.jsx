@@ -44,7 +44,7 @@ const DotNet = () => {
             {/* <MegaOffer /> */}
 
             {/* Job-Oriented Courses Section */}
-            <section className="py-16 px-4 bg-gradient-to-br from-cyan-50 via-blue-50 to-sky-50 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950">
+            <section className="py-8 md:py-12 lg:py-16 px-4 bg-gradient-to-br from-cyan-50 via-blue-50 to-sky-50 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950">
                 <div className="max-w-7xl mx-auto">
                     {/* Main Heading */}
                     <div className="text-center mb-8 md:mb-12">
@@ -91,7 +91,7 @@ const DotNet = () => {
             </section>
 
             {/* Premium Memberships */}
-            <section id="memberships" className="pt-16 px-4 bg-white dark:bg-slate-900">
+            <section id="memberships" className="pt-8 md:pt-12 lg:pt-16 px-4 bg-white dark:bg-slate-900">
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-4 md:mb-8">
                         <h2 className="text-4xl md:text-5xl font-bold mb-4 text-slate-900 dark:text-white">

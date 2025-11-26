@@ -70,7 +70,7 @@ function WhyAndOfferSection() {
 
                             <div className="bg-gradient-to-r from-orange-500 to-red-600 p-4 md:p-6 text-center">
 
-                                <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-6 mt-4 md:mt-6">
+                                <div className="flex flex-row items-center justify-center gap-4 md:gap-6 mt-4 md:mt-6">
                                     <div>
                                         <div className="text-white/80 text-xs md:text-sm font-semibold">Regular Price</div>
                                         <div className="text-white text-2xl md:text-3xl font-black line-through">₹45,000</div>

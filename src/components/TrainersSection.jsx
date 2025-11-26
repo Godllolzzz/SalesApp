@@ -94,10 +94,10 @@ function TrainersSection() {
     const scrollNext = useCallback(() => emblaApi?.scrollNext(), [emblaApi]);
 
     return (
-        <section id="tutors" className="py-20 px-4 bg-white dark:bg-slate-900">
+        <section id="tutors" className="py-12 lg:py-16 px-4 bg-white dark:bg-slate-900">
             <div className="max-w-7xl mx-auto">
                 {/* Header */}
-                <div className="text-center mb-16">
+                <div className="text-center mb-8 md:mb-12">
                     <h2 className="text-4xl md:text-5xl font-black mb-6 text-slate-900 dark:text-white">
                         Learn From the Top 1%
                         <span className="block text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 to-blue-600 dark:from-cyan-500 dark:to-blue-500">

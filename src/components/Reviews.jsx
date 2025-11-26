@@ -18,10 +18,10 @@ const Reviews = () => {
     const scrollNext = useCallback(() => emblaApi?.scrollNext(), [emblaApi]);
 
     return (
-        <section className="py-16 px-4 bg-white dark:bg-slate-950 transition-colors duration-300">
+        <section className="py-8 md:py-12 lg:py-16 px-4 bg-white dark:bg-slate-950 transition-colors duration-300">
             <div className="max-w-7xl mx-auto">
                 {/* Header */}
-                <div className="text-center mb-12">
+                <div className="text-center mb-8 md:mb-12">
                     <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900 dark:text-white">
                         Success{' '}
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-600 dark:from-cyan-400 dark:to-blue-500">

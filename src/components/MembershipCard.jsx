@@ -80,7 +80,7 @@ function MembershipCard({ membership }) {
                       <h5 className="text-base font-bold text-cyan-400">{section.title}</h5>
                     </div>
 
-                    <ul className="space-y-1 ml-12 text-sm text-slate-300">
+                    <ul className="space-y ml-8 text-sm text-slate-300">
                       {section.items.map((item, i) => (
                         <li key={i} className="flex items-start gap-2 leading-snug">
                           <span className="text-cyan-500">•</span>

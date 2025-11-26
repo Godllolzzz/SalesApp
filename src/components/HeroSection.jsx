@@ -176,7 +176,7 @@ function HeroSection() {
                         </div>
 
                         {/* Right Side - Image */}
-                        <div className="lg:flex-4 relative flex items-center justify-center">
+                        <div className="hidden md:flex lg:flex-4 relative items-center justify-center">
                             <div className="relative z-10">
                                 <img
                                     src={img}
